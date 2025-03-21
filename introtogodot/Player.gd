@@ -6,7 +6,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = 0
 	velocity.y = 0
-	
+	#test
 	if Input.is_key_pressed(KEY_LEFT):
 		if global_position.x >-400:
 			velocity.x -= 1
