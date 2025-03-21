@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://i61owmx0uxn6"]
+
+[ext_resource type="Material" uid="uid://nvfmg2k60o5r" path="res://Materials/TestMaterial.tres" id="1_fbw4h"]
+[ext_resource type="Material" uid="uid://byualm50qoi5l" path="res://Materials/Pinkish.tres" id="2_f501d"]
+[ext_resource type="Material" uid="uid://u4mpsu4iu6s2" path="res://Materials/GhostGreen.tres" id="3_6grab"]
+[ext_resource type="Material" uid="uid://b0gg43ctdysw3" path="res://Materials/textured.tres" id="4_6grab"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a1l08"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f501d"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6grab"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Snow" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0389204, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Snow"]
+material_override = ExtResource("1_fbw4h")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Snow"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.728831, 0)
+material_override = ExtResource("1_fbw4h")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Snow"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.29368, 0)
+material_override = ExtResource("1_fbw4h")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Snow"]
+transform = Transform3D(1.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.730237, 0)
+material_override = ExtResource("1_fbw4h")
+mesh = SubResource("BoxMesh_f501d")
+skeleton = NodePath("../..")
+
+[node name="Balls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49762, 0.0389204, 0)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Balls"]
+material_override = ExtResource("2_f501d")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Balls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4226, 0, 0)
+material_override = ExtResource("3_6grab")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Balls"]
+transform = Transform3D(-0.911058, 0, 0.412278, 0, 1, 0, -0.412278, 0, -0.911058, 2.6934, 0, 0)
+material_override = ExtResource("4_6grab")
+mesh = SubResource("SphereMesh_a1l08")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.438889, 0.898541, 0, -0.898541, 0.438889, 1.49762, 3.40847, 1.51424)
+visible = false
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 2.91496, 0.0465528)
+visible = false
+light_color = Color(1, 0, 1, 1)
+light_energy = 7.949
+shadow_enabled = true
+omni_range = 5.438
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -1, 0)
+mesh = SubResource("PlaneMesh_6grab")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.157762, 0.987477, 0, -0.987477, 0.157762, 1.49762, 7.1236, 1.51424)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 11.951
+spot_angle = 15.91
